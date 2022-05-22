@@ -15,17 +15,16 @@ class Solution
     bool isSubSequence(string A, string B)
     {
         //code here
-        // Iterative Approach
+        int n = A.length();
+        int m = B.length();
         
         int j=0;
-        int m = A.length();
-        int n = B.length();
-        
-        for(int i=0;i<n && j<m;i++){
-            if(A[j]==B[i])
-            j++;
+        for(int i=0;i<m;i++){
+            if(B[i]==A[j]){
+                j++;
+            }
         }
-        return (j==m);
+        return (j==n);
     }
 };
 
