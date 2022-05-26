@@ -121,18 +121,18 @@ struct Node
     struct Node* left;
     struct Node* right;
 }; */
+
+//Function to return a list containing the postorder traversal of the tree.
 void call(Node* root,vector<int>&v){
     if(root==NULL)return;
     call(root->left,v);
     call(root->right,v);
     v.push_back(root->data);
 }
-//Function to return a list containing the postorder traversal of the tree.
 vector <int> postOrder(Node* root)
 {
   // Your code here
   vector<int>v;
   call(root,v);
   return v;
-  
 }
