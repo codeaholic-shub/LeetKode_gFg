@@ -31,14 +31,13 @@ struct Node {
 
 class Solution {
   public:
-  void call(Node* root,vector<int>&v){
-      if(root==NULL)return;
-      call(root->left,v);
-      v.push_back(root->data);
-      call(root->right,v);
-      
-  }
     // Function to return a list containing the inorder traversal of the tree.
+    void call(Node* root,vector<int>&v){
+        if(root==NULL)return;
+        call(root->left,v);
+        v.push_back(root->data);
+        call(root->right,v);
+    }
     vector<int> inOrder(Node* root) {
         // Your code here
         vector<int>v;
